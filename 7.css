@@ -13,6 +13,7 @@
   --ti: calc(-360deg / 7);
 }
 
+/* 
 :nth-child(1n) { --tape-filter: hue-rotate(var(--do)) }
 :nth-child(2n) { --tape-filter: hue-rotate(var(--re)) }
 :nth-child(3n) { --tape-filter: hue-rotate(var(--mi)) }
@@ -20,10 +21,11 @@
 :nth-child(5n) { --tape-filter: hue-rotate(var(--so)) }
 :nth-child(6n) { --tape-filter: hue-rotate(var(--la)) }
 :nth-child(7n) { --tape-filter: hue-rotate(var(--ti)) }
+ */
 
 :root {
   --tape-play: gold;
-  --tape-remix: linear-gradient(gold, violet, deepskyblue, hotpink, salmon, turquoise, fuchsia, gold);
+  --tape-remix: linear-gradient(plum, violet, deepskyblue, hotpink, salmon, turquoise, fuchsia, plum);
 }
 
 ::selection {
@@ -34,13 +36,13 @@
 :any-link {
   color: inherit;
   display: inline-flex;
+  text-decoration-style: dotted;
 }
 
 :focus {
-  text-shadow: 0 0 2ex;
-  box-shadow: 0 0 1ex 1ex;
-  outline: thick groove;
-  text-decoration-style: dotted;
+  box-shadow: 0 0 1ex 1ex fuchsia;
+  outline: thick dotted indigo;
+  text-decoration-style: solid;
 }
 
 :hover {
@@ -53,40 +55,39 @@
 
 html {
   font-size: max(3ch, 4vmax + 1vmin);
-  line-height: 1.5;
+  line-height: 1.618em;
 }
 
 body {
-  margin: 1ch;
+  margin: 0;
   overflow-wrap: anywhere;
+  text-shadow: 1vw 1vh 1pt plum;
 }
 
 article {
+  display: flex;
+  flex-flow: column;
   contain: layout;
   padding: 1ch;
 }
 
 nav {
-  contain: layout;
   display: flex;
-  flex-flow: column-reverse;
-  font-size: 1.236em;
+  contain: layout;
+  font-size: 1.618em;
   margin-block: 1rem;
   min-height: 100vh;
   font-family: sans-serif;
 }
 
 nav a {
-  padding-inline: 1ch;
+  padding-inline: 1vmax;
 }
 
 h1 {
-  font-family: fantasy;
-  font-weight: unset;
+  order: 1111;
+  font-family: monospace;
   margin: 0;
-  margin-inline-end: 1em;
-  float: right;
-  writing-mode: vertical-rl;
 }
 
 ::first-letter {
@@ -97,6 +98,6 @@ h1 {
 @media (orientation: portrait) {
   nav {
     clear: both;
-    writing-mode: sideways-rl;
+    writing-mode: vertical-rl;
   }
 }
